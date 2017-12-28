@@ -13,7 +13,7 @@ pipeline{
                sh 'whoami'
                sh 'pwd'
                sh 'ls -ltrh'
-               sh './build.sh'
+               sh 'mvn clean install'
             }
         }
       }
