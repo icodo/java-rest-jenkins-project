@@ -10,6 +10,7 @@ pipeline{
     stage('Build') {
             agent { dockerfile { dir 'ci' } }
             steps {
+               sh 'whoami'
                sh 'pwd'
                sh 'ls -ltrh'
                sh './build.sh'
