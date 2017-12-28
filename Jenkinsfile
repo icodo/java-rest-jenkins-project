@@ -11,7 +11,8 @@ pipeline{
             agent { dockerfile { dir 'ci' } }
             steps {
                sh 'pwd'
-               sh 'ls - ltrh'
+               sh 'ls -ltrh'
+               sh './build.sh'
             }
         }
       }
