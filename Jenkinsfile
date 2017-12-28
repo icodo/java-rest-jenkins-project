@@ -8,7 +8,7 @@ pipeline{
             }
         }
     stage('Build') {
-            agent { dockerfile { dir 'ci' } }
+            agent { docker {image 'maven:3.5.0-jdk-8-alpine'} }
             steps {
                sh 'whoami'
                sh 'pwd'
