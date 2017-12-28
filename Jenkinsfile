@@ -10,7 +10,8 @@ pipeline{
     stage('Build') {
             agent { dockerfile { dir 'ci' } }
             steps {
-                sh 'docker build .'
+               sh 'pwd'
+               sh 'ls - ltrh'
             }
         }
       }
