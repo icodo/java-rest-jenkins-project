@@ -1,9 +1,9 @@
 version: "3"
 services:
   java:
-    image: icodo/java-rest-jenkins-project
+    image: icodo/java-rest-jenkins-project:latest
     ports:
-      - "80:8080"
+      - "8080:80"
     networks:
       - networktest
     deploy:
