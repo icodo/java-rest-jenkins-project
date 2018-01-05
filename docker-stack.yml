@@ -1,6 +1,5 @@
 version: "3"
 services:
-
   java:
     image: icodo/java-rest-jenkins-project
     ports:
@@ -8,7 +7,7 @@ services:
     networks:
       - networktest
     deploy:
-      replicas: 2
+      replicas: 3
       update_config:
         parallelism: 2
         delay: 10s
