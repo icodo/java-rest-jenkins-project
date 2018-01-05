@@ -1,19 +1,21 @@
-version: "3"
+version: '3.2'
+
 services:
-  javarest:
-    image: icodo/java-rest-jenkins-project:latest
-    ports:
-      - "8080:80"
-    networks:
-      - javatest
+  java-rest-server:
+    image: icodo/java-rest-jenkins-project
     deploy:
+      mode: replicated
       replicas: 3
-      update_config:
-        parallelism: 2
-        delay: 10s
       restart_policy:
         condition: on-failure
-
+        delay: 10s
+        max_attempts: 3
+        window: 60s
+    networks:
+      - jenkins
+    ports:
+      - "8080:8080"
 networks:
-  javatest:
+  java-network:
     driver: overlay
+    attachable: true
