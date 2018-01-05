@@ -1,11 +1,11 @@
 version: "3"
 services:
-  java:
+  javarest:
     image: icodo/java-rest-jenkins-project:latest
     ports:
       - "8080:80"
     networks:
-      - networktest
+      - javatest
     deploy:
       replicas: 3
       update_config:
