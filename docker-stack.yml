@@ -1,4 +1,4 @@
-version: '3.2'
+version: '3'
 
 services:
   java-rest-server:
@@ -10,12 +10,11 @@ services:
         condition: on-failure
         delay: 10s
         max_attempts: 3
-        window: 60s
+        window: 6s
     networks:
-      - jenkins
+      - javanetwork
     ports:
-      - "8080:8080"
+      - "80:8080"
 networks:
-  java-network:
+  javanetwork:
     driver: overlay
-    attachable: true
