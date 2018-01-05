@@ -1,0 +1,16 @@
+version: "3"
+services:
+
+  java:
+    image: icodo/java-rest-jenkins-project
+    ports:
+      - "80"
+    networks:
+      - networktest
+    deploy:
+      replicas: 2
+      update_config:
+        parallelism: 2
+        delay: 10s
+      restart_policy:
+        condition: on-failure
