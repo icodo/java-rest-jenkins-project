@@ -18,4 +18,3 @@ services:
 networks:
   networktest:
     driver: overlay
-    attachable: true
