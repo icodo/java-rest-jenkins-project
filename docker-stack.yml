@@ -15,5 +15,5 @@ services:
         condition: on-failure
 
 networks:
-  networktest:
+  javatest:
     driver: overlay
