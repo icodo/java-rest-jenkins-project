@@ -15,6 +15,17 @@ services:
       - javanetwork
     ports:
       - "80:8080"
+  visualizer:
+    image: dockersamples/visualizer:stable
+    ports:
+      - "81:8080"
+    volumes:
+      - "/var/run/docker.sock:/var/run/docker.sock"
+    deploy:
+      placement:
+        constraints: [node.role == manager]
+    networks:
+      - javanetwork
 networks:
   javanetwork:
     driver: overlay
