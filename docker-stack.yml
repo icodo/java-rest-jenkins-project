@@ -7,7 +7,7 @@ services:
       mode: replicated
       replicas: 3
       update_config:
-        parallelism: 1
+        parallelism: 2
         delay: 240s
         order: start-first
         failure_action: rollback
