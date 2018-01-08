@@ -25,7 +25,7 @@ public class GreetingController {
 			e.printStackTrace();
 		}
 
-		return new Greeting(counter.incrementAndGet(), String.format(template, name) + "Ip: " + ip);
+		return new Greeting(counter.incrementAndGet(), "Version-1" + String.format(template, name) + "Ip: " + ip);
 
 	}
 }
