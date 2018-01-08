@@ -1,4 +1,4 @@
-version: '3.4'
+version: '3'
 
 services:
   java-rest-server:
@@ -6,11 +6,6 @@ services:
     deploy:
       mode: replicated
       replicas: 3
-      update_config:
-        parallelism: 2
-        delay: 240s
-        order: start-first
-        failure_action: rollback
       restart_policy:
         condition: on-failure
         delay: 10s
