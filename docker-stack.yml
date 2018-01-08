@@ -5,7 +5,7 @@ services:
     image: icodo/java-rest-jenkins-project
     deploy:
       mode: replicated
-      replicas: 5
+      replicas: 3
       restart_policy:
         condition: on-failure
         delay: 10s
